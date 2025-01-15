@@ -445,6 +445,10 @@ let currentX = 0;
 let currentY = 0;
 
 function render() {
+
+  gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+  gl.clearColor(0.0, 0.0, 0.0, 1.0);
+  gl.clear(gl.COLOR_BUFFER_BIT);
   for (let i = 0; i < params.iterations; i++) {
     // Diffuse X velocity
     gl.useProgram(diffusionXProgram);
